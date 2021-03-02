@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "6c9c7f1b-8569-4047-b3d5-c30117a16526",
+		"name": "Questionnaire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44344/api/Questionnaire/Questions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "https://localhost:44344/api/Questionnaire/Questions"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44344/api/Questionnaire/UserAnswers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserId\": 1,\r\n    \"Answers\": [\r\n                {\r\n                    \"QuestionId\" : 1,\r\n                    \"AnswerId\" : 1 \r\n                }\r\n            ]\r\n}"
+				},
+				"url": "https://localhost:44344/api/Questionnaire/UserAnswers"
+			},
+			"response": []
+		}
+	]
+}
